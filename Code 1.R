@@ -30,7 +30,7 @@ ca_np <- read_csv(here("data", "ca_np.csv"))
 # Our second data set is a single Excel worksheet containing only visitation for 
 # Channel Islands National Park (ci_np.xlsx)
 
-ci_np <- read_excel(here("data", "ci_np.xlsx"))
+ci_np <- readxl::read_excel(here("data", "ci_np.xlsx"))
 
 ## Initial data exploration
 
