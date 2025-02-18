@@ -1,0 +1,73 @@
+---
+title: "My first Quarto"
+author: "Marty Faville"
+format: docx
+editor: visual
+---
+
+## Start here
+
+I am writing this for new code (Insert or shortcut Ctrl + Alt + i)
+
+```{r}
+################################################
+### Code 1: Read in data
+################################################
+
+################################################
+### The code in this file covers the following:
+################################################
+
+  # Read in external data (Excel files, CSVs) with readr and readxl
+  # Initial data exploration
+  # Set up GitHub
+  
+# Libraries needed
+
+library(here) # easier file referencing 
+library(tidyverse) # reading in CSV files and more
+library(readxl) # reading in Excel files
+
+
+## Read in external data (Excel files, CSVs) with readr and readxl
+
+# Our first data set is a comma-separated-value (CSV) file containing visitation 
+# data for all National Parks in California (ca_np.csv)
+
+ca_np <- read_csv(here("data", "ca_np.csv"))
+
+# Our second data set is a single Excel worksheet containing only visitation for 
+# Channel Islands National Park (ci_np.xlsx)
+
+ci_np <- readxl::read_excel(here("data", "ci_np.xlsx"))
+
+## Initial data exploration
+
+# Can look at the data in the environment tab, 
+# or with functions such as follows:
+
+names(ca_np) # check what all the variable names are
+head(ca_np) # first 6 rows of the data
+summary(ca_np) # quick summary of each variable
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
