@@ -45,7 +45,7 @@ inverts = invertebrates %>%
 
 inverts = inverts %>% 
   mutate(across(c(site, common_name), factor)) 
-
+summary(inverts)
 # Question: What do you think about month? Should we also treat it as a factor?
 
 # Another application is to create a new variable in the data. For example,
@@ -67,8 +67,8 @@ inverts2 = inverts %>%
 
 # Or, it is sometimes easier to remove variables instead:
 
-inverta = inverts %>% 
-  select(-month) 
+inverts = inverts %>% 
+  select(-prop2016) 
 
 ## Reshaping data
 
