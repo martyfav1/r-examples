@@ -55,9 +55,10 @@ lobsters %>%
 
 # group_by multiple variables:
 
-lobsters %>%
+lobsterstable=lobsters %>%
   group_by(site, year) %>%
-  summarise(count_by_siteyear =  n())
+  summarise(count_by_siteyear =  n())%>%
+  print(n=40)
 
 
 # summarise multiple variables
