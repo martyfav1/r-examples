@@ -125,7 +125,8 @@ inverts_unite <- inverts_long %>%
 # again we created in "inverts_unite":
 
 inverts_sep <- inverts_unite %>% 
-  separate(site_year, into = c("my_site", "my_year"))
+  separate(site_year, into = c("my_site", "my_year"))%>%
+  mutate(year=substr(my_year, 2, 5))
 
 # Final comment: You might need to be specific about WHICH separate or select
 # function you mean: dplyr::select, tidyr::separate
